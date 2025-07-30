@@ -9,3 +9,11 @@ f = sp.sin(x)
 integral = sp.integrate(f, x)
 
 print('The integral of sin(x) is:', integral)
+
+# Define the function for cos
+f_cos = sp.cos(x)
+
+# Compute the integral for cos
+integral_cos = sp.integrate(f_cos, x)
+
+print('The integral of cos(x) is:', integral_cos)
