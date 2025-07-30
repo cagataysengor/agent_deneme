@@ -14,6 +14,6 @@ print('The integral of sin(x) is:', integral)
 f_cos = sp.cos(x)
 
 # Compute the integral for cos
-integral_cos = sp.integratede(f_cos, x)
+integral_cos = sp.integrate(f_cos, x)
 
-printf('The integral of cos(x) is:', integral_cos)
+print('The integral of cos(x) is:', integral_cos)
