@@ -1,41 +1,40 @@
 import datetime
-from typing import Optional, Union
+from typing import Optional
 
-
-def get_current_time(fmt: str = "%Y-%m-%d %H:%M:%S",
-                     tz: Optional[datetime.tzinfo] = None) -> str:
+def get_current_time(fmt: str = "%Y-%m-%d %H:%M:%S", tz: Optional[datetime.tzinfo] = None) -> str:
     """
-    Returns the current time as a formatted string.
+    Return the current time formatted according to the given format string.
 
-    :param fmt: Format string compliant with datetime.strftime.
-    :param tz: Optional timezone information.
-    :return: Formatted current time.
+    Args:
+        fmt (str): Format string compatible with datetime.strftime. Defaults to "%Y-%m-%d %H:%M:%S".
+        tz (Optional[datetime.tzinfo]): Time zone info. If None, system local time is used.
+
+    Returns:
+        str: Formatted current time.
     """
     now = datetime.datetime.now(tz)
     return now.strftime(fmt)
 
 
-def get_timestamp(tz: Optional[datetime.tzinfo] = None) -> float:
+def get_timestamp() -> float:
     """
-    Returns the current time as a timestamp (seconds since epoch).
+    Return the current time as a UNIX timestamp (seconds since the epoch).
 
-    :param tz: Optional timezone information.
-    :return: Timestamp.
+    Returns:
+        float: Current UNIX timestamp.
     """
-    return datetime.datetime.now(tz).timestamp()
+    return datetime.datetime.now().timestamp()
 
 
 def parse_time(time_str: str, fmt: str = "%Y-%m-%d %H:%M:%S") -> datetime.datetime:
     """
-    Parses a time string into a datetime object.
+    Parse a time string according to the given format and return a datetime object.
 
-    :param time_str: string representation of time.
-    :param fmt: format of the input string.
-    :return: datetime object.
+    Args:
+        time_str (str): Time string to parse.
+        fmt (str): Format string compatible with datetime.strptime.
+
+    Returns:
+        datetime.datetime: Parsed datetime object.
     """
     return datetime.datetime.strptime(time_str, fmt)
-
-
-if __name__ == "__main__":
-    # Example usage
-    print("Current Time:", get_current_time())
