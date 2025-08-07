@@ -1,3 +1,4 @@
+# Bu bir deneme yorumudur
 #!/usr/bin/env python3
 
 import argparse
